@@ -18,7 +18,7 @@ public class Movie {
         return _priceCode;
     }
 
-    public void set_priceCode(int arg) {
+    public void setPriceCode(int arg) {
         _priceCode = arg;
     }
 
