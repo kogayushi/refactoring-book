@@ -99,4 +99,19 @@ public class CustomerTest {
                 "You earned 3 frequent renter points";
         assertThat(actual, is(expected));
     }
+
+    @Test
+    public void testHtmlStatementWithSevral() {
+        Customer sut = new Customer("risa");
+        sut.addRental(new Rental(new Movie("spider man", Movie.REGULAR), 2));
+        sut.addRental(new Rental(new Movie("mighty thor", Movie.NEW_RELEASE), 3));
+        String actual = sut.htmlStatement();
+
+        String expected = "<H1>Rental Record for <EM>risa</EM></H1><P>\n" +
+                "spider man:2.0<BR>\n" +
+                "mighty thor:9.0<BR>\n" +
+                "<P>You owe <EM>11.0</EM><P>\n" +
+                "On this rental you earned <EM>3</EM> frequent renter points<P>";
+        assertThat(actual, is(expected));
+    }
 }
