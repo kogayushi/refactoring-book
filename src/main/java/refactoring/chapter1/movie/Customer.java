@@ -29,8 +29,7 @@ class Customer {
             Rental each = (Rental) rentals.nextElement();
 
             thisAmount = amountFor(each);
-
-
+            
             // レンタルポイントを加算
             frequentRenterPoints++;
             // 新作を2日以上借りた場合はボーナスポイント
@@ -49,8 +48,8 @@ class Customer {
 
     }
 
-    private int amountFor(Rental each) {
-        int thisAmount = 0;
+    private double amountFor(Rental each) {
+        double thisAmount = 0;
         switch (each.getMovie().getPriceCode()) {
             case Movie.REGULAR:
                 thisAmount = 2;
