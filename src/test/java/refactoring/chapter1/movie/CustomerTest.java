@@ -20,7 +20,6 @@ public class CustomerTest {
         assertThat(actual, is(expected));
     }
 
-
     @Test
     public void testStatementWithRegularFor3Days() {
         Customer sut = new Customer("risa");
