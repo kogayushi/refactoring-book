@@ -2,9 +2,13 @@ apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
 
+sourceCompatibility = '1.8' // -source
+targetCompatibility = '1.8' // -target
+
 repositories {
     jcenter()
 }
 
 dependencies {
+    compile 'junit:junit:4.12'
 }
