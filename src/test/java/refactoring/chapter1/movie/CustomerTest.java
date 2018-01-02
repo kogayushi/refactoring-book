@@ -84,4 +84,19 @@ public class CustomerTest {
                 "You earned 1 frequent renter points";
         assertThat(actual, is(expected));
     }
+
+    @Test
+    public void testStatementWithSevral() {
+        Customer sut = new Customer("risa");
+        sut.addRental(new Rental(new Movie("spider man", Movie.REGULAR), 2));
+        sut.addRental(new Rental(new Movie("mighty thor", Movie.NEW_RELEASE), 3));
+        String actual = sut.statement();
+
+        String expected = "Rental Record for risa\n" +
+                "\tspider man\t2.0\t\n" +
+                "\tmighty thor\t9.0\t\n" +
+                "Amount owed is 11.0\n" +
+                "You earned 3 frequent renter points";
+        assertThat(actual, is(expected));
+    }
 }
